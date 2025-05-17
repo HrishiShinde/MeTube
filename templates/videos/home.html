@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    {% for vid in vids %}
+      <div class="col">
+        <a class="card h-100 shadow-sm" href="/watch/{{vid.id}}">
+          <img src="{{ vid.thumbnail.url }}" class="card-img-top" alt="{{ vid.title }}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ vid.title }}</h5>
+            <p class="card-text text-muted mb-2">
+              <small>{{ vid.uploaded_at|date:"M d, Y" }} | {{ vid.views }} Views</small>
+            </p>
+            <div class="mt-auto d-flex align-items-center text-secondary">
+              <span class="me-2">👤</span> {{ vid.uploaded_by.username }}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% empty %}
+      <p class="text-center">No videos uploaded yet, jaldi upload karo na! 😜</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 600px;">
+  <h2 class="mb-4 text-center">Upload Video</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+      <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+    </div>
+    
+    <div class="mb-3">
+      <label for="video" class="form-label">Video File <span class="text-danger">*</span></label>
+      <input class="form-control" type="file" id="video" name="video" accept="video/*" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="thumbnail" class="form-label">Thumbnail <span class="text-danger">*</span></label>
+      <input class="form-control" type="file" id="thumbnail" name="thumbnail" accept="image/*" required>
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary px-4">Upload</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
