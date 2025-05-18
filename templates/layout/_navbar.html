@@ -10,8 +10,10 @@
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <form class="d-flex mx-auto" role="search" style="width: 40%;">
-                <input class="form-control me-2" type="search" name="q" placeholder="Search videos..." value="{{ search_query }}" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search videos..." aria-label="Search" name="q" value="{{ search_query }}">
+                    <button class="btn btn-outline-secondary" type="submit" id="search-btn">Search</button>
+                </div>
             </form>
 
             <div class="d-flex align-items-center ms-auto gap-3">

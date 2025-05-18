@@ -7,7 +7,7 @@
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
     {% for vid in vids %}
       <div class="col">
-        <a class="card h-100 shadow-sm" href="/watch/{{vid.id}}">
+        <a class="card h-100 shadow-sm" href="/watch/{{vid.id}}" style="text-decoration: none;">
           <img src="{{ vid.thumbnail.url }}" class="card-img-top" alt="{{ vid.title }}">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ vid.title }}</h5>
